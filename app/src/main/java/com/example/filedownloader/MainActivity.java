@@ -65,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
                         startButton.setText("Start");
                     }
                 });
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        downloadProgressText.setText("");
+                    }
+                });
                 return;
             }
 
@@ -80,6 +86,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 startButton.setText("Start");
+            }
+        });
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                downloadProgressText.setText("");
             }
         });
     }
